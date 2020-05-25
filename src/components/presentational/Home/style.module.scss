@@ -1,0 +1,46 @@
+@import '../../../styles/vars.scss';
+
+.Home {
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-image: url(../../../img/_MG_1768.jpg);
+    background-color: #FDFBFC;
+    background-size: auto 100%;
+    display: flex;
+    
+    .info-bar-container {
+        display: flex;
+        width: 40%;
+
+        .info-bar {
+            margin: auto;
+            
+            .name {
+                color: #101010;
+                font-size: 30px;
+            }
+            .qualification-list {
+                color: #101010;
+
+                li {
+                    position: relative;
+                    display: block;
+                    line-height: 1.6;
+                    font-size: 15px;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: -15px;
+                        transform: translateY(-50%);
+                        background-color: $generic-color;
+                        height: 10px;
+                        width: 10px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }    
+}

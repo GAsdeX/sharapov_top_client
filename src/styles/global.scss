@@ -1,0 +1,19 @@
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    outline: none;
+    font-family: Arial;
+}
+
+h1, h2, h3, h4, h5, h6, a, p, span, ul, li {
+    display: inline-block;
+    font-size: 13px;
+    color: #010101;
+    text-decoration: none;
+    list-style: none;
+}

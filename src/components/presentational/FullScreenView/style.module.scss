@@ -1,0 +1,27 @@
+.FullScreenView {
+    min-height: 100vh;
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+
+    &.with-title {
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+
+    .title {
+        padding: 100px 30px 30px 30px;
+        box-sizing: border-box;
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px;
+        width: 100%;
+        flex-grow: 0;
+    }
+    .content {
+        height: 100%;
+        width: 100%;
+        flex-grow: 1;
+        display: flex;
+    }
+}
