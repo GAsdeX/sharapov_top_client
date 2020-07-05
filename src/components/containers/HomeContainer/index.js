@@ -9,6 +9,7 @@ import { HeaderForm } from "../../common/HeaderForm";
 import { Results } from "../../common/Results";
 import { FAQ } from "../../common/FAQ";
 import { Header } from "../../presentational/Header";
+import {About} from "../../presentational/About";
 
 
 export const HomeContainer = () => {
@@ -22,6 +23,7 @@ export const HomeContainer = () => {
             <Header />
             <Home />
             <HeaderForm />
+            <About />
             <Services services={services} />
             <Results />
             <FAQ faq={faq}/>
