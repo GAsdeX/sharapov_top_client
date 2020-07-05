@@ -1,0 +1,36 @@
+@import 'src/styles/vars.scss';
+
+.HeaderForm {
+  padding: 60px 0;
+  background: $generic-color;
+
+  .title {
+    font-size: 26px;
+    color: white;
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  .form {
+    margin: 0 -7.5px;
+
+    :global {
+      form {
+
+        display: flex;
+        justify-content: center;
+
+        & > * {
+          width: 100%;
+        }
+
+        input,
+        button {
+          margin: 0 7.5px;
+          background: white;
+          border: 1px solid #ccc
+        }
+      }
+    }
+  }
+}

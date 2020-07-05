@@ -5,6 +5,7 @@ import { useHomePage } from '../../hooks/useHomePage'
 import { Home } from '../../presentational/Home'
 import { Services } from '../../presentational/Services'
 import { Footer } from '../../presentational/Footer'
+import {HeaderForm} from "../../common/HeaderForm";
 
 
 export const HomeContainer = () => {
@@ -15,6 +16,7 @@ export const HomeContainer = () => {
     return (
         <>
             <Home />
+            <HeaderForm />
             <Services services={services} />
             <Footer />
         </>

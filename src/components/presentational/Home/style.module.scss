@@ -18,6 +18,12 @@
             .name {
                 color: #101010;
                 font-size: 30px;
+                margin-bottom: 15px;
+
+                .lastName {
+                    font-size: 40px;
+                    font-weight: bold;
+                }
             }
             .qualification-list {
                 color: #101010;
@@ -25,8 +31,9 @@
                 li {
                     position: relative;
                     display: block;
-                    line-height: 1.6;
+                    line-height: 1.8;
                     font-size: 15px;
+                    padding-left: 15px;
 
                     &:before {
                         content: '';

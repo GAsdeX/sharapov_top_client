@@ -7,12 +7,18 @@ import {Info} from "../Info";
 import {sendMessage} from "../../../api/smtp";
 
 
-
-export const FormWrapper = () => {
+export const FormWrapper = ({withMessage}) => {
     const [notification, setNotification] = useState(null)
 
-    const onSubmit = async (values) => {
+    const onSubmit = async ({
+                                name, lastName, email, message
+                            }) => {
         setNotification("fetch")
+
+        const values =
+            withMessage
+                ? {name, lastName, email, message}
+                : {name, lastName, email}
 
         try {
             await sendMessage(values)
@@ -53,51 +59,56 @@ export const FormWrapper = () => {
     }
 
     return (
-        <Formik
-            initialValues={{ name: "", lastName: "", email: "" , message: "" }}
-            onSubmit={onSubmit}
-        >
-            {({handleSubmit, handleChange, values}) => (
-                <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        name="name"
-                        onChange={handleChange}
-                        value={values.name}
-                        placeholder="Имя"
-                    />
-                    <input
-                        type="text"
-                        name="lastName"
-                        onChange={handleChange}
-                        value={values.lastName}
-                        placeholder="Фамилия"
-                    />
-                    <input
-                        type="text"
-                        name="email"
-                        onChange={handleChange}
-                        value={values.email}
-                        placeholder="E-mail"
-                    />
-                    <textarea
-                        name="message"
-                        cols="30"
-                        rows="10"
-                        onChange={handleChange}
-                        value={values.message}
-                        placeholder="Сообщение"
-                    />
-                    <Button
-                        isLoading={notification === "fetch"}
-                    >
-                        Отправить
-                    </Button>
-                    <div className="mt-3">
-                        <Notification />
-                    </div>
-                </form>
-            )}
-        </Formik>
+        <>
+            <Formik
+                initialValues={{name: "", lastName: "", email: "", message: ""}}
+                onSubmit={onSubmit}
+            >
+                {({handleSubmit, handleChange, values}) => (
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            name="name"
+                            onChange={handleChange}
+                            value={values.name}
+                            placeholder="Имя"
+                        />
+                        <input
+                            type="text"
+                            name="lastName"
+                            onChange={handleChange}
+                            value={values.lastName}
+                            placeholder="Фамилия"
+                        />
+                        <input
+                            type="text"
+                            name="email"
+                            onChange={handleChange}
+                            value={values.email}
+                            placeholder="E-mail"
+                        />
+                        {
+                            withMessage &&
+                            <textarea
+                                name="message"
+                                cols="30"
+                                rows="10"
+                                onChange={handleChange}
+                                value={values.message}
+                                placeholder="Сообщение"
+                            />
+                        }
+                        <Button
+                            isLoading={notification === "fetch"}
+                        >
+                            Отправить
+                        </Button>
+                    </form>
+                )}
+            </Formik>
+            <div className="mt-3">
+                <Notification/>
+            </div>
+        </>
     )
 }

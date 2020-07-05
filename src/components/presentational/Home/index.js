@@ -17,7 +17,7 @@ export const Home = () => (
                 <div
                     className={style['name']}
                 >
-                    Шарапов
+                    <span className={style['lastName']}>Шарапов</span>
                     <br />
                     Игори Владимирович
                 </div>
