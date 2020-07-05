@@ -7,9 +7,6 @@ import footer from "./Footer.module.scss"
 
 
 export const Footer =  () => {
-
-
-
     return (
         <div className={footer.Footer}>
             <Container>
@@ -34,7 +31,9 @@ export const Footer =  () => {
                         md={6}
                     >
                         <div className={footer.callbackForm}>
-                            <FormWrapper />
+                            <FormWrapper
+                                withMessage
+                            />
                         </div>
                     </Col>
                 </Row>
