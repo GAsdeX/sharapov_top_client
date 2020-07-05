@@ -6,6 +6,7 @@ import { init } from '../store/actions/init'
 import { routers } from '../utils/routers'
 
 import { HomeContainer } from './containers/HomeContainer'
+import {Article} from "./presentational/Article";
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,9 @@ export const App = () => {
     {
       path: '/',
       component: HomeContainer
+    },{
+      path: '/:article',
+      component: Article
     },
   ], history)
 }
