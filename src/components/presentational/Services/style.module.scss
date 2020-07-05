@@ -39,6 +39,10 @@
             justify-content: flex-start;
             cursor: pointer;
 
+            a {
+                display: flex;
+                align-items: center;
+            }
             .service-img {
                 height: 70px;
                 width: 70px;

@@ -14,15 +14,20 @@ const ServiceTitle = ({
     imageUrl,
     index,
     setService,
+    activeService,
     id
 }) => {
+    const bag = {
+        onClick: setService && setService(index),
+        className: style['service']
+    }
 
+    const Wrapper = activeService === null
+        ? ({children}) => <div {...bag}>{children}</div>
+        : ({children}) => <Link to={`/${id}`} {...bag}>{children}</Link>
 
     return (
-        <div
-            onClick={setService && setService(index)}
-            className={style['service']}
-        >
+        <Wrapper>
             <div
                 className={style['service-img']}
                 style={{
@@ -31,14 +36,12 @@ const ServiceTitle = ({
             >
 
             </div>
-            <Link to={`/${id}`}>
-                <div
-                    className={style['service-title']}
-                >
-                    {Title}
-                </div>
-            </Link>
-        </div>
+            <span
+                className={style['service-title']}
+            >
+                {Title}
+            </span>
+        </Wrapper>
     )
 }
 
@@ -79,6 +82,7 @@ const ServicesNav = ({
     const Service = (group, index) => <ServiceTitle
         {...group}
         index={index}
+        activeService={activeService}
         key={index}
         setService={setService}
     />
