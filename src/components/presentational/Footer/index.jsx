@@ -1,0 +1,45 @@
+import React from "react"
+import { Container, Row, Col } from "react-bootstrap";
+import {FormWrapper} from "../../common/FormWrapper";
+
+import footer from "./Footer.module.scss"
+
+
+
+export const Footer =  () => {
+
+
+
+    return (
+        <div className={footer.Footer}>
+            <Container>
+                <Row>
+                    <Col
+                        md={6}
+                    >
+                        <div className={footer.title}>
+                            Будьте на связи с доктором
+                        </div>
+                        <div className={footer.contact}>
+                            Звоните в любое время с 8:00 до 20:00
+                        </div>
+                        <div className={footer.contact}>
+                            doctor.sharapov@gmail.com
+                        </div>
+                        <div className={footer.contact}>
+                            +380 (67) 729-36-48
+                        </div>
+                    </Col>
+                    <Col
+                        md={6}
+                    >
+                        <div className={footer.callbackForm}>
+                            <FormWrapper />
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
+
+    )
+}
