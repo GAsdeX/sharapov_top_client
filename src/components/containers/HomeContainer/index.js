@@ -6,6 +6,7 @@ import { Home } from '../../presentational/Home'
 import { Services } from '../../presentational/Services'
 import { Footer } from '../../presentational/Footer'
 import {HeaderForm} from "../../common/HeaderForm";
+import {Results} from "../../common/Results";
 
 
 export const HomeContainer = () => {
@@ -18,6 +19,7 @@ export const HomeContainer = () => {
             <Home />
             <HeaderForm />
             <Services services={services} />
+            <Results />
             <Footer />
         </>
     )

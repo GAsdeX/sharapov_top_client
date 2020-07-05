@@ -1,0 +1,50 @@
+@import "src/styles/vars.scss";
+
+@mixin withImage() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ResultsWrapper {
+  background: $bg-gray;
+
+  .Results {
+    height: 600px;
+    width: 600px;
+    position: relative;
+    margin: 0 auto;
+
+    .before {
+      @include withImage;
+    }
+    .after {
+      @include withImage;
+      width: 600px;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+
+      .prev,
+      .next {
+        height: 60px;
+        width: 60px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .prev {
+        background-image: url(./img/arrows.svg);
+      }
+      .next {
+        background-image: url(./img/arrow.svg);
+      }
+    }
+  }
+}
