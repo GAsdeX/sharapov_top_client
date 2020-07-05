@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import { mapServicesValue } from '../../store/reducers/services'
+import { mapFaqValue } from '../../store/reducers/faq'
 
 export const useHomePage = () => {
     const {
@@ -8,10 +9,12 @@ export const useHomePage = () => {
         fetch
     } = useSelector(mapServicesValue)
 
-    console.log(useSelector(mapServicesValue));
-    
-    
+    const {
+        success : faq,
+    } = useSelector(mapFaqValue)
+
     return {
-        services
+        services,
+        faq
     }
 }
