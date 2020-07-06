@@ -1,5 +1,5 @@
-export const BASE_URL = 'https://sharapov.top:1337'
-export const SMTP_URL = 'https://185.25.116.11:3001'
+export const BASE_URL = 'https://sharapov.top/api'
+export const SMTP_URL = 'https://sharapov.top/smtp'
 
 
 export const URL = {
