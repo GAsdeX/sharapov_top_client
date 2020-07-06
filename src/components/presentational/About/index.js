@@ -10,9 +10,12 @@ import FsLightbox from 'fslightbox-react';
 
 import style from "./About.module.scss";
 
-export const About = () => {
+export const About = ({certs: c}) => {
     const [toggler, setToggler] = useState(false);
     const [slide, setSlide] = useState(false);
+
+    console.log(c)
+
 
     return (
         <FullScrennView
@@ -34,7 +37,6 @@ export const About = () => {
                     </Col>
                     <Col
                         md={6}
-                        sm={12}
                     >
                         <Masonry
                             breakpointCols={5}

@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux'
 import { mapServicesValue } from '../../store/reducers/services'
 import { mapFaqValue } from '../../store/reducers/faq'
 import {mapArticlesValue} from "../../store/reducers/articles";
+import {mapCertificatesValue} from "../../store/reducers/certificates";
 
 export const useHomePage = () => {
     const {
@@ -18,10 +19,15 @@ export const useHomePage = () => {
         success : articles,
     } = useSelector(mapArticlesValue)
 
+    const {
+        success : certs,
+    } = useSelector(mapCertificatesValue)
+
 
     return {
         services,
         faq,
-        articles
+        articles,
+        certs
     }
 }

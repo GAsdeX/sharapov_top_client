@@ -15,7 +15,8 @@ import {About} from "../../presentational/About";
 export const HomeContainer = () => {
     const {
         services,
-        faq
+        faq,
+        certs
     } = useHomePage()
 
     return (
@@ -23,7 +24,7 @@ export const HomeContainer = () => {
             <Header />
             <Home />
             <HeaderForm />
-            <About />
+            <About certs={certs}/>
             <Services services={services} />
             <Results />
             <FAQ faq={faq}/>
