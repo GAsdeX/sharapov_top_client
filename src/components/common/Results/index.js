@@ -19,6 +19,8 @@ export const Results = () => {
     const goPrev = () => void (activeImage === 0 ? setActiveImage(0) : setActiveImage(activeImage - 1) )
     const goNext = () => void (activeImage === after.length - 1 ? setActiveImage(after.length - 1) : setActiveImage(activeImage + 1))
 
+    const isMedia = window.innerWidth > 767
+
     return (
         <FullScrennView
             title="Результаты работы"
@@ -28,8 +30,8 @@ export const Results = () => {
                 <BeforeAfterSlider
                     before={before[activeImage]}
                     after={after[activeImage]}
-                    width={600}
-                    height={600}
+                    width={isMedia ? 600 : 300}
+                    height={isMedia ? 600 : 300}
                 />
 
                 <div className={style.mediaSlider}>

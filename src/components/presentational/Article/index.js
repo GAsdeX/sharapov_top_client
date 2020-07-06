@@ -6,6 +6,7 @@ import {useHomePage} from "../../hooks/useHomePage";
 import {Footer} from "../Footer";
 
 import style from "./Article.module.scss"
+import {Header} from "../Header";
 
 export const Article = ({
     match: {
@@ -25,6 +26,7 @@ export const Article = ({
 
     return (
         <>
+            <Header />
             <Container
                 className={style.Article}
             >

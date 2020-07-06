@@ -1,5 +1,9 @@
 @import "src/styles/vars.scss";
 
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+
 .Header {
   position: sticky;
   top: 0;
@@ -11,6 +15,10 @@
   justify-content: center;
   height: 60px;
   z-index: 10;
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
 
   a {
     color: white;

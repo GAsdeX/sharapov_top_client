@@ -1,5 +1,9 @@
 @import "src/styles/vars.scss";
 
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+
 .FAQ {
   background: white;
   width: 100%;
@@ -12,6 +16,10 @@
   padding-top: 30px;
   position: relative;
   cursor: pointer;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 17px;
+  }
 
   &.active {
     color: $generic-color;
@@ -36,4 +44,8 @@
 .Answer {
   font-size: 16px;
   line-height: 1.7;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 14px;
+  }
 }

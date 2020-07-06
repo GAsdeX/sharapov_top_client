@@ -28,11 +28,13 @@ export const About = () => {
                 <Row>
                     <Col
                         md={6}
+                        sm={12}
                     >
                         <AboutText />
                     </Col>
                     <Col
                         md={6}
+                        sm={12}
                     >
                         <Masonry
                             breakpointCols={5}

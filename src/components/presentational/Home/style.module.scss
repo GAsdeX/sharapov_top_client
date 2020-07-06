@@ -1,5 +1,9 @@
 @import '../../../styles/vars.scss';
 
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+
 .Home {
     background-position: bottom;
     background-repeat: no-repeat;
@@ -7,10 +11,20 @@
     background-color: #FDFBFC;
     background-size: auto 100%;
     display: flex;
-    
+    min-height: 100vh;
+
+    @include media-breakpoint-down(sm) {
+        background-image: none;
+        padding-bottom: 0;
+    }
+
     .info-bar-container {
         display: flex;
         width: 40%;
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
 
         .info-bar {
             margin: auto;

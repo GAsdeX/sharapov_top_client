@@ -1,5 +1,9 @@
 @import 'src/styles/vars.scss';
 
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+
 .HeaderForm {
   padding: 60px 0;
   background: $generic-color;
@@ -16,12 +20,27 @@
 
     :global {
       form {
-
         display: flex;
         justify-content: center;
 
         & > * {
           width: 100%;
+        }
+
+        @include media-breakpoint-down(sm) {
+          flex-direction: column;
+
+          input {
+            margin-bottom: 15px !important;
+          }
+          input,
+          button {
+            width: auto;
+          }
+
+          button {
+            height: 60px;
+          }
         }
 
         input,
