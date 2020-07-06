@@ -19,12 +19,12 @@ export const Home = () => (
                 >
                     <span className={style['lastName']}>Шарапов</span>
                     <br />
-                    Игори Владимирович
+                    Игорь Владимирович
                 </div>
                 <ul 
                     className={style['qualification-list']}
                 >
-                    <li>Кандидат иедицинских наук</li>
+                    <li>Кандидат медицинских наук</li>
                     <li>Врач-хирург высшей категории</li>
                     <li>Пластический хирург</li>
                 </ul>
