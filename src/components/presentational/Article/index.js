@@ -21,7 +21,7 @@ export const Article = ({
 
     const entry = articles
         ? articles
-            .find(({id}) => id === Number(article))
+            .find(({ServiceResults: [rules]}) => rules.id === Number(article))
         : null;
 
     return (
