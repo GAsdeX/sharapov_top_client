@@ -1,4 +1,8 @@
+@import "src/styles/vars.scss";
+
 .About {
+  background: $bg-gray;
+
   p {
     white-space: pre-wrap;
     font-size: 14px;

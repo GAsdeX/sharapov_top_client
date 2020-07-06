@@ -10,6 +10,7 @@
     "bootstrap": "^4.4.1",
     "classnames": "^2.2.6",
     "formik": "^2.1.4",
+    "fslightbox-react": "^1.4.9",
     "loaders.css": "^0.1.2",
     "node-sass": "^4.14.0",
     "react": "^16.13.1",
