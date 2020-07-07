@@ -1,32 +1,36 @@
 import React, { useState } from "react"
 import Masonry from 'react-masonry-css'
 import { Container, Row, Col } from "react-bootstrap";
+import {BASE_URL} from "../../../constants";
 
 import {FullScrennView} from "../FullScreenView";
 import {AboutText} from "./AboutText";
-import {certs} from "../../../img/certs"
+// import {certs} from "../../../img/certs"
 
 import FsLightbox from 'fslightbox-react';
 
 import style from "./About.module.scss";
 
-export const About = ({certs: c}) => {
+const composeImagePath = (url) => `${BASE_URL}${url}`
+
+export const About = ({certs}) => {
     const [toggler, setToggler] = useState(false);
     const [slide, setSlide] = useState(false);
 
-    console.log(c)
-
+    const fullCerts = certs
+        ? certs.map(({CertificateImage, MinifiedImage}) => ({mini: MinifiedImage.url, full: CertificateImage.url}))
+        : []
 
     return (
         <FullScrennView
             title="О Докторе"
             className={style.About}
         >
-            <FsLightbox
-                toggler={toggler}
-                sources={certs}
-                slide={slide}
-            />
+            {/*<FsLightbox*/}
+            {/*    toggler={fullCerts.map(({full}) => composeImagePath(full))}*/}
+            {/*    sources={certs}*/}
+            {/*    slide={slide}*/}
+            {/*/>*/}
             <Container>
                 <Row>
                     <Col
@@ -44,9 +48,9 @@ export const About = ({certs: c}) => {
                             columnClassName="my-masonry-grid_column"
                         >
                             {
-                                certs.map((image, index) => (
+                                fullCerts.map(({mini}, index) => (
                                     <img
-                                        src={image}
+                                        src={composeImagePath(mini)}
                                         onClick={() => {
                                             setToggler(!toggler)
                                             setSlide(index + 1)
