@@ -7,5 +7,5 @@ export const URL = {
     SERVICES: `${BASE_URL}/Groups`,
     CERTIFICATES: `${BASE_URL}/Certificates`,
     FAQ: `${BASE_URL}/Faqs`,
-    SMTP: `${SMTP_URL}/smtp/send/`
+    SMTP: `${SMTP_URL}/send/`
 }
