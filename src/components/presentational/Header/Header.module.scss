@@ -34,3 +34,29 @@
     }
   }
 }
+
+.mediaHeader {
+  display: none;
+  padding: 0 15px;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 60px;
+  background-color: $generic-color;
+  z-index: 10;
+
+  @include media-breakpoint-down(sm) {
+    display: flex;
+
+    .backArrow {
+      margin: auto auto auto 0;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      background-image: url(../../../img/multimedia-option.svg);
+      height: 30px;
+      width: 30px;
+    }
+  }
+}

@@ -26,7 +26,7 @@ export const Article = ({
 
     return (
         <>
-            <Header />
+            <Header isArticle/>
             <Container
                 className={style.Article}
             >
