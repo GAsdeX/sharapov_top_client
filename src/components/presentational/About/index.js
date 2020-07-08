@@ -17,20 +17,21 @@ export const About = ({certs}) => {
     const [toggler, setToggler] = useState(false);
     const [slide, setSlide] = useState(false);
 
-    const fullCerts = certs
-        ? certs.map(({CertificateImage, MinifiedImage}) => ({mini: MinifiedImage.url, full: CertificateImage.url}))
-        : []
+    const fullCerts = certs && certs.map(({CertificateImage, MinifiedImage}) => ({mini: MinifiedImage.url, full: CertificateImage.url}))
 
     return (
         <FullScrennView
             title="О Докторе"
             className={style.About}
         >
-            {/*<FsLightbox*/}
-            {/*    toggler={fullCerts.map(({full}) => composeImagePath(full))}*/}
-            {/*    sources={certs}*/}
-            {/*    slide={slide}*/}
-            {/*/>*/}
+            {
+                certs &&
+                <FsLightbox
+                    toggler={fullCerts.map(({full}) => composeImagePath(full))}
+                    sources={certs}
+                    slide={slide}
+                />
+            }
             <Container>
                 <Row>
                     <Col
@@ -42,23 +43,27 @@ export const About = ({certs}) => {
                     <Col
                         md={6}
                     >
-                        <Masonry
-                            breakpointCols={5}
-                            className="my-masonry-grid"
-                            columnClassName="my-masonry-grid_column"
-                        >
-                            {
-                                fullCerts.map(({mini}, index) => (
-                                    <img
-                                        src={composeImagePath(mini)}
-                                        onClick={() => {
-                                            setToggler(!toggler)
-                                            setSlide(index + 1)
-                                        }}
-                                    />
-                                ))
-                            }
-                        </Masonry>
+                        {
+                            certs &&
+                            <Masonry
+                                breakpointCols={5}
+                                className="my-masonry-grid"
+                                columnClassName="my-masonry-grid_column"
+                            >
+                                {
+                                    fullCerts.map(({mini}, index) => (
+                                        <img
+                                            src={composeImagePath(mini)}
+                                            onClick={() => {
+                                                setToggler(!toggler)
+                                                setSlide(index + 1)
+                                            }}
+                                        />
+                                    ))
+                                }
+                            </Masonry>
+                        }
+
                     </Col>
                 </Row>
             </Container>

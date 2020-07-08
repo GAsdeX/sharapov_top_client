@@ -7,8 +7,6 @@ import {mapCertificatesValue} from "../../store/reducers/certificates";
 export const useHomePage = () => {
     const {
         success : services,
-        fail,
-        fetch
     } = useSelector(mapServicesValue)
 
     const {
@@ -23,11 +21,15 @@ export const useHomePage = () => {
         success : certs,
     } = useSelector(mapCertificatesValue)
 
+    const { successappState } = useSelector(({appState}) => appState)
+
+    useSelector(state => console.log(state))
 
     return {
         services,
         faq,
         articles,
-        certs
+        certs,
+        appState: successappState
     }
 }

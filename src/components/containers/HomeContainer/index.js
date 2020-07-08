@@ -10,25 +10,29 @@ import { Results } from "../../common/Results";
 import { FAQ } from "../../common/FAQ";
 import { Header } from "../../presentational/Header";
 import {About} from "../../presentational/About";
+import {GlobalPageLoader} from "../../presentational/GlobalPageLoader";
 
 
 export const HomeContainer = () => {
     const {
         services,
         faq,
-        certs
+        certs,
+        appState,
     } = useHomePage()
 
-    return (
-        <>
-            <Header />
-            <Home />
-            <HeaderForm />
-            <About certs={certs}/>
-            <Services services={services} />
-            <Results />
-            <FAQ faq={faq}/>
-            <Footer />
-        </>
-    )
+    return appState === "DONE"
+        ? (
+            <>
+                <Header />
+                <Home />
+                <HeaderForm />
+                <About certs={certs}/>
+                <Services services={services} />
+                <Results />
+                <FAQ faq={faq}/>
+                <Footer />
+            </>
+        )
+        : <GlobalPageLoader />
 };
