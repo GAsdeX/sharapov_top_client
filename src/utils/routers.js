@@ -4,13 +4,16 @@ import {
     Switch,
     Route
 } from "react-router-dom";
+import ScrollToTop from 'react-router-scroll-top'
 
 export function routers(routes, history) {
     return <Router history={history} >
-        <Switch>
-            {
-                routes.map(settings => <Route exact { ...settings } key={settings.path} />)
-            }
-        </Switch>
+        <ScrollToTop>
+            <Switch>
+                {
+                    routes.map(settings => <Route exact { ...settings } key={settings.path} />)
+                }
+            </Switch>
+        </ScrollToTop>
     </Router>
 };

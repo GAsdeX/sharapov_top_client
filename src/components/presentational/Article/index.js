@@ -5,8 +5,8 @@ import {FormWrapper} from "../../common/FormWrapper";
 import {useHomePage} from "../../hooks/useHomePage";
 import {Footer} from "../Footer";
 
-import style from "./Article.module.scss"
 import {Header} from "../Header";
+import style from "./Article.module.scss"
 
 export const Article = ({
     match: {
@@ -49,13 +49,13 @@ export const Article = ({
                         }
 
                     </Col>
-                    <Col
-                        md={4}
-                    >
-                        <FormWrapper
-                            withMessage
-                        />
-                    </Col>
+                    {/*<Col*/}
+                    {/*    md={4}*/}
+                    {/*>*/}
+                    {/*    <FormWrapper*/}
+                    {/*        withMessage*/}
+                    {/*    />*/}
+                    {/*</Col>*/}
                 </Row>
             </Container>
             <Footer />

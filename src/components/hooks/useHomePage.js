@@ -23,8 +23,6 @@ export const useHomePage = () => {
 
     const { successappState } = useSelector(({appState}) => appState)
 
-    useSelector(state => console.log(state))
-
     return {
         services,
         faq,
