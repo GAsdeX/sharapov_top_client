@@ -27,8 +27,8 @@ export const About = ({certs}) => {
             {
                 certs &&
                 <FsLightbox
-                    toggler={fullCerts.map(({full}) => composeImagePath(full))}
-                    sources={certs}
+                    toggler={toggler}
+                    sources={fullCerts.map(({full}) => composeImagePath(full))}
                     slide={slide}
                 />
             }
