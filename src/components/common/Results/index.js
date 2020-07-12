@@ -23,6 +23,7 @@ export const Results = () => {
 
     return (
         <FullScrennView
+            anchor="results"
             title="Результаты работы"
             className={style.ResultsWrapper}
         >

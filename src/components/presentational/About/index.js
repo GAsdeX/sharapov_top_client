@@ -21,6 +21,7 @@ export const About = ({certs}) => {
 
     return (
         <FullScrennView
+            anchor="about"
             title="О Докторе"
             className={style.About}
         >

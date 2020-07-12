@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import {Container, Row, Col} from "react-bootstrap";
 
 import {FormWrapper} from "../../common/FormWrapper";
@@ -23,6 +23,12 @@ export const Article = ({
         ? articles
             .find(({ServiceResults: [rules]}) => rules.id === Number(article))
         : null;
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0
+        })
+    }, [])
 
     return (
         <>

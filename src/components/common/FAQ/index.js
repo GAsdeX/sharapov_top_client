@@ -29,6 +29,7 @@ export const FAQ = ({faq}) => {
 
     return (
         <FullScrennView
+            anchor="faq"
             title="Для пациента"
         >
             <div className={style.FAQ}>

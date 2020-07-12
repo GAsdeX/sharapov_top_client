@@ -6,6 +6,7 @@ import style from './style.module.scss'
 
 export const Home = () => (
     <FullScrennView
+        anchor="home"
         className={style['Home']}
     >
         <div

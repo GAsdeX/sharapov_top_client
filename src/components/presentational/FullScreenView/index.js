@@ -3,8 +3,9 @@ import classNames from 'classnames'
 
 import style from './style.module.scss'
 
-export const FullScrennView = ({children, className, title}) => (
+export const FullScrennView = ({children, className, title, anchor}) => (
     <div
+        data-anchor={anchor}
         className={classNames(style['FullScreenView'], title && style['with-title'], className)}
     >
         {

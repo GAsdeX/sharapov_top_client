@@ -136,6 +136,7 @@ const ServicesView = ({services}) => {
 export const Services = ({services}) => {
     return (
         <FullScrennView
+            anchor="services"
             title="Предоставляемые услуги"
         >
             <ServicesView services={services} />
