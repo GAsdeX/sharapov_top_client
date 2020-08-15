@@ -1,0 +1,1 @@
+export const replaceBold = (text) => text.replace(/\*\*(.*?)\*\*/gm, '<strong>$1</strong>');

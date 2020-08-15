@@ -7,6 +7,7 @@ import {Footer} from "../Footer";
 
 import {Header} from "../Header";
 import style from "./Article.module.scss"
+import {replaceBold} from "../../../utils/text";
 
 export const Article = ({
     match: {
@@ -49,7 +50,7 @@ export const Article = ({
                                     {entry.ServiceTitle}
                                 </span>
                                  <p
-                                     dangerouslySetInnerHTML={{__html: entry && entry.ServiceDescription}}
+                                     dangerouslySetInnerHTML={{__html: entry && replaceBold(entry.ServiceDescription)}}
                                  />
                             </>
                         }

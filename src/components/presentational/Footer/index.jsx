@@ -26,6 +26,9 @@ export const Footer =  () => {
                         <div className={footer.contact}>
                             +380 (67) 729-36-48
                         </div>
+                        <div className={footer.contact}>
+                            +380 (48) 700-54-03
+                        </div>
                     </Col>
                     <Col
                         md={6}
