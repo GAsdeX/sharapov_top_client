@@ -8,7 +8,7 @@ import footer from "./Footer.module.scss"
 
 export const Footer =  () => {
     return (
-        <div className={footer.Footer}>
+        <div className={footer.Footer} data-anchor="contacts">
             <Container>
                 <Row>
                     <Col

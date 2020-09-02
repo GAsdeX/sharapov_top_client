@@ -1,5 +1,6 @@
 import React, {useEffect} from "react"
 import {Container, Row, Col} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 import {FormWrapper} from "../../common/FormWrapper";
 import {useHomePage} from "../../hooks/useHomePage";
@@ -38,6 +39,9 @@ export const Article = ({
                 className={style.Article}
             >
                 <Row>
+                    <Col md={12}>
+                        <Link to="/#services" className={style.back}>Назад</Link>
+                    </Col>
                     <Col
                         md={8}
                     >

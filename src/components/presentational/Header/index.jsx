@@ -33,6 +33,7 @@ export const Header = ({isArticle}) => {
                     <Link to="/#services">Услуги</Link>
                     <Link to="/#results">Результаты</Link>
                     <Link to="/#faq">Пациенту</Link>
+                    <Link to="/#contacts">Контакты</Link>
                 </Container>
             </div>
             {
