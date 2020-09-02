@@ -1,9 +1,9 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap";
 import {FormWrapper} from "../../common/FormWrapper";
+import {Socials} from "../Socials"
 
 import footer from "./Footer.module.scss"
-
 
 
 export const Footer =  () => {
@@ -29,6 +29,9 @@ export const Footer =  () => {
                         <div className={footer.contact}>
                             +380 (48) 700-54-03
                         </div>
+
+                        <Socials/>
+
                     </Col>
                     <Col
                         md={6}
